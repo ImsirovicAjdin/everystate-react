@@ -1,0 +1,30 @@
+{
+  "name": "@everystate/react",
+  "version": "1.0.0",
+  "description": "EveryState React: React adapter with usePath, useIntent, useAsync hooks and EventStateProvider",
+  "type": "module",
+  "main": "index.js",
+  "keywords": [
+    "everystate",
+    "react",
+    "state-management",
+    "hooks",
+    "useSyncExternalStore",
+    "event-driven",
+    "dot-path",
+    "external-store",
+    "adapter"
+  ],
+  "author": {
+    "name": "Ajdin Imsirovic",
+    "url": "https://www.linkedin.com/in/ajdin-imsirovic"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ImsirovicAjdin/everystate-react"
+  },
+  "dependencies": {
+    "@uistate/react": "^1.0.1"
+  }
+}
