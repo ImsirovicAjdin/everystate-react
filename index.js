@@ -1,8 +1,15 @@
 /**
  * @everystate/react
  *
- * EveryState wrapper for @uistate/react
- * Re-exports all functionality from the underlying @uistate/react package
+ * React adapter for EveryState with hooks:
+ * EventStateProvider, useStore, usePath, useIntent, useWildcard, useAsync
  */
 
-export * from '@uistate/react';
+export {
+  EventStateProvider,
+  useStore,
+  usePath,
+  useIntent,
+  useWildcard,
+  useAsync,
+} from './eventStateReact.js';

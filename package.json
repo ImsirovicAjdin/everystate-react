@@ -4,6 +4,7 @@
   "description": "EveryState React: React adapter with usePath, useIntent, useAsync hooks and EventStateProvider",
   "type": "module",
   "main": "index.js",
+  "types": "index.d.ts",
   "keywords": [
     "everystate",
     "react",
@@ -24,7 +25,7 @@
     "type": "git",
     "url": "https://github.com/ImsirovicAjdin/everystate-react"
   },
-  "dependencies": {
-    "@uistate/react": "^1.0.1"
+  "peerDependencies": {
+    "react": ">=18.0.0"
   }
 }
