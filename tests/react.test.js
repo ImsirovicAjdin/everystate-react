@@ -33,7 +33,7 @@ const results = runTests({
   },
 
   'usePath: unsubscribe stops notifications': () => {
-    const store = createEventState({ count: 0 });
+    const store = createEveryState({ count: 0 });
     let fires = 0;
     const unsub = store.subscribe('count', () => { fires++; });
     store.set('count', 1);
@@ -62,7 +62,7 @@ const results = runTests({
   // -- useWildcard patterns ------------------------------------------
 
   'useWildcard: fires on any child change': () => {
-    const store = createEventState({ state: { tasks: {} } });
+    const store = createEveryState({ state: { tasks: {} } });
     let fires = 0;
     store.subscribe('state.tasks.*', () => { fires++; });
     store.set('state.tasks.t1', { text: 'A', done: false });
@@ -80,7 +80,7 @@ const results = runTests({
   // -- useAsync patterns ---------------------------------------------
 
   'useAsync: loading → success lifecycle': async () => {
-    const store = createEventState({});
+    const store = createEveryState({});
     await store.setAsync('users', async () => [{ id: 1, name: 'Alice' }]);
     if (store.get('users.status') !== 'success') throw new Error('Expected success');
     if (!Array.isArray(store.get('users.data'))) throw new Error('Expected array');
@@ -88,7 +88,7 @@ const results = runTests({
   },
 
   'useAsync: loading → error lifecycle': async () => {
-    const store = createEventState({});
+    const store = createEveryState({});
     try {
       await store.setAsync('data', async () => { throw new Error('fail'); });
     } catch {}
@@ -110,7 +110,7 @@ const results = runTests({
   // -- Provider pattern ----------------------------------------------
 
   'provider: store as external store (useSyncExternalStore compat)': () => {
-    const store = createEventState({ count: 0 });
+    const store = createEveryState({ count: 0 });
     // Simulate useSyncExternalStore contract
     let snapshot = store.get('count');
     const subscribe = (cb) => store.subscribe('count', () => {

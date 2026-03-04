@@ -1,4 +1,4 @@
-# @everystate/react
+# @everystate/react v1.0.4
 
 **React adapter for EveryState with hooks**
 
@@ -10,6 +10,8 @@ Built on React 18's `useSyncExternalStore` for concurrent-mode safety.
 ```bash
 npm install @everystate/react @everystate/core react
 ```
+
+> **Zero external dependencies** — `@everystate/react` only depends on `@everystate/core` (same namespace) and React as peer dependencies. For its self-test and integration tests, it uses `@everystate/test` (also same namespace). No third-party packages required.
 
 ## Quick Start
 
@@ -63,6 +65,67 @@ function App() {
 | [@everystate/router](https://www.npmjs.com/package/@everystate/router) | SPA routing as state | MIT |
 | [@everystate/test](https://www.npmjs.com/package/@everystate/test) | Event-sequence testing for EveryState stores. Zero dependency. | Proprietary |
 | [@everystate/view](https://www.npmjs.com/package/@everystate/view) | State-driven view: DOMless resolve + surgical DOM projector. View tree as first-class state | MIT |
+
+## Self-test (CLI, opt-in)
+
+Run the bundled self-test to verify the store-side patterns that the React hooks consume.
+It requires `@everystate/core` but **no React runtime** — it exercises the store layer only.
+It is **opt-in** and never runs automatically on install:
+
+```bash
+# via npx (no install needed)
+npx everystate-react-self-test
+
+# if installed locally
+everystate-react-self-test
+
+# or directly
+node node_modules/@everystate/react/self-test.js
+```
+
+You can also run the npm script from the package folder:
+
+```bash
+npm --prefix node_modules/@everystate/react run self-test
+```
+
+### Integration tests (@everystate/test)
+
+The `tests/` folder contains a separate integration suite that uses
+`@everystate/test` and `@everystate/core` (declared as `devDependencies`).
+This is an intentional tradeoff: the **self-test** stays lightweight,
+while integration tests remain available for deeper validation.
+
+**For end users** (after installing the package):
+
+```bash
+# Install test dependencies
+npm install @everystate/test @everystate/core
+
+# Run from package folder
+cd node_modules/@everystate/react
+npm run test:integration
+# or short alias
+npm run test:i
+```
+
+Or, from your project root:
+
+```bash
+npm --prefix node_modules/@everystate/react run test:integration
+# or short alias
+npm --prefix node_modules/@everystate/react run test:i
+```
+
+**For package developers** (working in the source repo):
+
+```bash
+# Install dev dependencies first
+npm install
+
+# Run integration tests
+npm run test:integration
+```
 
 ## License
 
