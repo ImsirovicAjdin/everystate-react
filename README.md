@@ -1,4 +1,4 @@
-# @everystate/react v1.0.4
+# @everystate/react v1.0.5
 
 **React adapter for EveryState with hooks**
 
@@ -11,7 +11,7 @@ Built on React 18's `useSyncExternalStore` for concurrent-mode safety.
 npm install @everystate/react @everystate/core react
 ```
 
-> **Zero external dependencies** — `@everystate/react` only depends on `@everystate/core` (same namespace) and React as peer dependencies. For its self-test and integration tests, it uses `@everystate/test` (also same namespace). No third-party packages required.
+> **Zero external dependencies** - `@everystate/react` only depends on `@everystate/core` (same namespace) and React as peer dependencies. For its self-test and integration tests, it uses `@everystate/test` (also same namespace). No third-party packages required.
 
 ## Quick Start
 
@@ -60,16 +60,18 @@ function App() {
 | [@everystate/css](https://www.npmjs.com/package/@everystate/css) | Reactive CSSOM engine: design tokens, typed validation, WCAG enforcement, all via path-based state | MIT |
 | [@everystate/examples](https://www.npmjs.com/package/@everystate/examples) | Example applications and patterns | MIT |
 | [@everystate/perf](https://www.npmjs.com/package/@everystate/perf) | Performance monitoring overlay | MIT |
-| [@everystate/react](https://www.npmjs.com/package/@everystate/react) | React hooks adapter: `usePath`, `useIntent`, `useAsync` hooks and `EveryStateProvider` | MIT |
-| [@everystate/renderer](https://www.npmjs.com/package/@everystate/renderer) | Direct-binding reactive renderer: `bind-*`, `set`, `each` attributes. Zero build step | Proprietary |
+| [@everystate/react](https://www.npmjs.com/package/@everystate/react) | React hooks adapter: `usePath`, `useIntent`, `useAsync` hooks and `EventStateProvider` | MIT |
+| [@everystate/renderer](https://www.npmjs.com/package/@everystate/renderer) | Direct-binding reactive renderer: `bind-*`, `set`, `each` attributes. Zero build step | MIT |
 | [@everystate/router](https://www.npmjs.com/package/@everystate/router) | SPA routing as state | MIT |
-| [@everystate/test](https://www.npmjs.com/package/@everystate/test) | Event-sequence testing for EveryState stores. Zero dependency. | Proprietary |
+| [@everystate/test](https://www.npmjs.com/package/@everystate/test) | Event-sequence testing for UIstate stores. Zero dependency. | MIT |
 | [@everystate/view](https://www.npmjs.com/package/@everystate/view) | State-driven view: DOMless resolve + surgical DOM projector. View tree as first-class state | MIT |
+| [@everystate/vue](https://www.npmjs.com/package/@everystate/vue) | Vue 3 composables adapter: `provideStore`, `usePath`, `useIntent`, `useWildcard`, `useAsync` | MIT |
+| [@everystate/types](https://www.npmjs.com/package/@everystate/types) | Typed dot-path autocomplete for EveryState stores (you are here) | MIT |
 
 ## Self-test (CLI, opt-in)
 
 Run the bundled self-test to verify the store-side patterns that the React hooks consume.
-It requires `@everystate/core` but **no React runtime** — it exercises the store layer only.
+It requires `@everystate/core` but **no React runtime** - it exercises the store layer only.
 It is **opt-in** and never runs automatically on install:
 
 ```bash

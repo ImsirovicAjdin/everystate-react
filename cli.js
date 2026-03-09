@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * @everystate/react CLI — opt-in self-test
+ * @everystate/react CLI - opt-in self-test
  *
  * Usage:
  *   npx everystate-react-self-test          # run self-test
@@ -13,7 +13,7 @@
 
   if (args.includes('--help') || args.includes('-h')) {
     console.log(`
-@everystate/react — self-test CLI
+@everystate/react - self-test CLI
 
 Usage:
   everystate-react-self-test          Run the bundled self-test
@@ -25,7 +25,7 @@ consume: subscribe+get (usePath), set (useIntent), wildcard subscribe
 useSyncExternalStore provider contract.
 
 It requires @everystate/core to be installed.
-No React runtime is needed — the test exercises the store layer only.
+No React runtime is needed - the test exercises the store layer only.
 `.trim());
     process.exit(0);
   }
