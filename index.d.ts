@@ -12,14 +12,14 @@ import type { ReactNode } from 'react';
  * Provider: makes a store available to all child components via hooks.
  * The store is created *outside* React. The provider is pure dependency injection.
  */
-export function EventStateProvider(props: {
+export function EveryStateProvider(props: {
   store: EveryStateStore;
   children: ReactNode;
 }): JSX.Element;
 
 /**
  * Returns the EveryState store from context.
- * Throws if called outside an EventStateProvider.
+ * Throws if called outside an EveryStateProvider.
  */
 export function useStore(): EveryStateStore;
 
