@@ -1,7 +1,7 @@
 import { createContext, useContext, useMemo, useSyncExternalStore } from 'react';
 
 // ---- Context ----
-const EventStateContext = createContext(null);
+const EveryStateContext = createContext(null);
 
 /**
  * Provider: makes a store available to all child components via hooks.
@@ -9,25 +9,25 @@ const EventStateContext = createContext(null);
  *
  * @param {{ store: object, children: React.ReactNode }} props
  */
-export function EventStateProvider({ store, children }) {
+export function EveryStateProvider({ store, children }) {
   return (
-    <EventStateContext.Provider value={store}>
+    <EveryStateContext.Provider value={store}>
       {children}
-    </EventStateContext.Provider>
+    </EveryStateContext.Provider>
   );
 }
 
 /**
- * useStore: returns the EventState store from context.
- * Throws if called outside an EventStateProvider.
+ * useStore: returns the EveryState store from context.
+ * Throws if called outside an EveryStateProvider.
  *
- * @returns {object} The EventState store
+ * @returns {object} The EveryState store
  */
 export function useStore() {
-  const store = useContext(EventStateContext);
+  const store = useContext(EveryStateContext);
   if (!store) {
     throw new Error(
-      'useStore: no store found. Wrap your component tree in <EventStateProvider store={store}>.'
+      'useStore: no store found. Wrap your component tree in <EveryStateProvider store={store}>.'
     );
   }
   return store;
