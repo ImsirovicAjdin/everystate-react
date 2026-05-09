@@ -1,4 +1,9 @@
-import { createContext, useContext, useMemo, useSyncExternalStore } from 'react';
+import React, {
+  createContext,
+  useContext,
+  useMemo,
+  useSyncExternalStore
+} from 'react';
 
 // ---- Context ----
 const EveryStateContext = createContext(null);
