@@ -10,11 +10,11 @@ const EveryStateContext = createContext(null);
  * @param {{ store: object, children: React.ReactNode }} props
  */
 export function EveryStateProvider({ store, children }) {
-  return (
-    <EveryStateContext.Provider value={store}>
-      {children}
-    </EveryStateContext.Provider>
-  );
+  return React.createElement(
+    EveryStateContext.Provider,
+    { value: store },
+    children
+  )
 }
 
 /**
