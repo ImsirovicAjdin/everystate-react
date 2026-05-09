@@ -6,10 +6,10 @@
  */
 
 export {
-  EventStateProvider,
+  EveryStateProvider,
   useStore,
   usePath,
   useIntent,
   useWildcard,
   useAsync,
-} from './eventStateReact.js';
+} from './everyStateReact.js';
